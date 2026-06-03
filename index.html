@@ -1,41 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pokemon Adventure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokemon World</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+body{
+margin:0;
+background:#4CAF50;
+font-family:Arial;
+overflow:hidden;
+}
+
+#player{
+position:absolute;
+width:40px;
+height:40px;
+background:red;
+left:100px;
+top:100px;
+}
+
+#controls{
+position:fixed;
+bottom:20px;
+left:20px;
+}
+
+button{
+width:70px;
+height:70px;
+font-size:30px;
+margin:3px;
+}
+</style>
 </head>
+
 <body>
 
-<div id="game-ui">
-    <div id="location">Pallet Town</div>
-    <div id="badges">Badges: 0/8</div>
+<div id="player"></div>
+
+<div id="controls">
+<div>
+<button onclick="move(0,-20)">▲</button>
 </div>
 
-<canvas id="gameCanvas"></canvas>
-
-<div id="battleScreen" class="hidden">
-    <h2 id="enemyName">Wild Pokémon</h2>
-
-    <div id="enemyHp"></div>
-
-    <hr>
-
-    <div id="playerPokemon"></div>
-
-    <button id="attackBtn">Attack</button>
-    <button id="ballBtn">Poké Ball</button>
-    <button id="runBtn">Run</button>
-
-    <div id="battleText"></div>
+<div>
+<button onclick="move(-20,0)">◀</button>
+<button onclick="move(0,20)">▼</button>
+<button onclick="move(20,0)">▶</button>
+</div>
 </div>
 
-<script src="world.js"></script>
-<script src="pokemon.js"></script>
-<script src="battle.js"></script>
-<script src="game.js"></script>
+<script>
+let x=100;
+let y=100;
+
+function move(dx,dy){
+x+=dx;
+y+=dy;
+
+const p=document.getElementById("player");
+
+p.style.left=x+"px";
+p.style.top=y+"px";
+}
+</script>
 
 </body>
 </html>
