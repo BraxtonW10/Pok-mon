@@ -2,71 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pokemon World</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pokemon World 3D</title>
 
-<style>
-body{
-margin:0;
-background:#4CAF50;
-font-family:Arial;
-overflow:hidden;
-}
-
-#player{
-position:absolute;
-width:40px;
-height:40px;
-background:red;
-left:100px;
-top:100px;
-}
-
-#controls{
-position:fixed;
-bottom:20px;
-left:20px;
-}
-
-button{
-width:70px;
-height:70px;
-font-size:30px;
-margin:3px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="player"></div>
-
-<div id="controls">
-<div>
-<button onclick="move(0,-20)">▲</button>
+<div id="loading">
+Loading Pokemon World...
 </div>
 
-<div>
-<button onclick="move(-20,0)">◀</button>
-<button onclick="move(0,20)">▼</button>
-<button onclick="move(20,0)">▶</button>
-</div>
-</div>
-
-<script>
-let x=100;
-let y=100;
-
-function move(dx,dy){
-x+=dx;
-y+=dy;
-
-const p=document.getElementById("player");
-
-p.style.left=x+"px";
-p.style.top=y+"px";
-}
-</script>
+<script type="module" src="game.js"></script>
 
 </body>
 </html>
