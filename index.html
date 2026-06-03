@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pokemon World 3D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon World</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="loading">
-Loading Pokemon World...
+<div id="game-ui">
+    <div id="location">Pallet Town</div>
+    <div id="badges">Badges: 0/8</div>
 </div>
 
-<script type="module" src="game.js"></script>
+<canvas id="gameCanvas"></canvas>
+
+<div id="battleScreen" class="hidden">
+
+    <h2 id="enemyName">Wild Pokémon</h2>
+
+    <div id="enemyHp">HP: 100</div>
+
+    <hr>
+
+    <div id="playerPokemon">
+        Your Pokémon
+    </div>
+
+    <button id="attackBtn">
+        Attack
+    </button>
+
+    <button id="ballBtn">
+        Poké Ball
+    </button>
+
+    <button id="runBtn">
+        Run
+    </button>
+
+    <div id="battleText"></div>
+
+</div>
+
+<div id="controls">
+
+    <div>
+        <button id="up">▲</button>
+    </div>
+
+    <div>
+        <button id="left">◀</button>
+        <button id="down">▼</button>
+        <button id="right">▶</button>
+    </div>
+
+</div>
+
+<script src="world.js"></script>
+<script src="pokemon.js"></script>
+<script src="battle.js"></script>
+<script src="gym.js"></script>
+<script src="game.js"></script>
 
 </body>
 </html>
