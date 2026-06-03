@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon Adventure</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-ui">
+    <div id="location">Pallet Town</div>
+    <div id="badges">Badges: 0/8</div>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<div id="battleScreen" class="hidden">
+    <h2 id="enemyName">Wild Pokémon</h2>
+
+    <div id="enemyHp"></div>
+
+    <hr>
+
+    <div id="playerPokemon"></div>
+
+    <button id="attackBtn">Attack</button>
+    <button id="ballBtn">Poké Ball</button>
+    <button id="runBtn">Run</button>
+
+    <div id="battleText"></div>
+</div>
+
+<script src="world.js"></script>
+<script src="pokemon.js"></script>
+<script src="battle.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
